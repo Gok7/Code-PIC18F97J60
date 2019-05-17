@@ -1,0 +1,12 @@
+*** Error 51 "regulation_1.c" Line 37(1,4): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 38(1,4): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 39(1,4): A numeric expression must appear here
+*** Error 12 "regulation_1.c" Line 43(2,8): Undefined identifier   bouton
+*** Error 12 "regulation_1.c" Line 44(7,13): Undefined identifier   entree
+*** Error 12 "regulation_1.c" Line 55(9,15): Undefined identifier   entree
+*** Error 51 "regulation_1.c" Line 57(1,5): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 60(1,5): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 62(1,5): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 65(1,5): A numeric expression must appear here
+*** Error 51 "regulation_1.c" Line 68(1,8): A numeric expression must appear here
+      11 Errors,  0 Warnings.

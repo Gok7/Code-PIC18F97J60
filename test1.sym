@@ -1,0 +1,92 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+006     MAIN.bouton
+007     MAIN.entree
+008     MAIN.masque
+009     MAIN.@SCRATCH1
+00A     lcd_putc.c
+00B     @delay_ms1.P1
+00B     lcd_gotoxy.x
+00C     lcd_gotoxy.y
+00D     lcd_gotoxy.address
+00E     lcd_gotoxy.@SCRATCH1
+00F     lcd_send_byte.address
+010     lcd_send_byte.n
+011     lcd_read_byte.ValeurLue
+011     lcd_send_byte.@SCRATCH1
+F71     CCP_5
+F71     CCP_5_LOW
+F72     CCP_5_HIGH
+F74     CCP_4_LOW
+F74     CCP_4
+F75     CCP_4_HIGH
+F83     PSP_DATA
+F84     Lcd_Data
+F87.0   enable
+F87.1   rw
+F87.2   rs
+FB4.6   C1OUT
+FB4.7   C2OUT
+FB8     CCP_3_LOW
+FB8     CCP_3
+FB9     CCP_3_HIGH
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000AC  @delay_ms1
+0000D4  lcd_read_byte
+0000F6  lcd_send_byte
+000128  lcd_init
+000176  lcd_gotoxy
+00019A  lcd_putc
+0001DC  MAIN
+000004  @const91
+000024  @const92
+000044  @const93
+000064  @const94
+000084  @const95
+0001DC  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    C:\Documents and Settings\gokhan-duthil\Bureau\TP REG - AFF\PROG\
+
+Project Files:
+    test1.c
+    18F97J60.h
+    LCD_PicDemNet.C
+
+Units:
+    test1.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F97J60
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      test1.err
+    INHX32:      test1.hex
+    Symbols:     test1.sym
+    List:        test1.lst
+    Debug/COFF:  test1.cof
+    Project:     test1.PJT
+    Call Tree:   test1.tre

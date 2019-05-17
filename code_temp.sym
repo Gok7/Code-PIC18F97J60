@@ -1,0 +1,139 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+006-009 MAIN.TempBrute
+00A-00D MAIN.Temp_volt
+00E-011 MAIN.Temp_degre
+012-015 MAIN.PotBrute
+016-019 MAIN.Pot_volt
+01A-01D MAIN.Potdegree
+01E-021 MesurePotentiometreBrute.Mesure
+01E-021 MesureTemp_Brute.Mesure
+01E-021 @PRINTF_L32D_80FPFPF.P1
+01E     MAIN.@SCRATCH1
+01F     MAIN.@SCRATCH2
+020     MAIN.@SCRATCH3
+021     MAIN.@SCRATCH4
+022-025 @ADDFF.P1
+022-023 @ITOF.P2
+022     @PRINTF_L32D_80FPFPF.P3
+023     @PRINTF_L32D_80FPFPF.@SCRATCH1
+024     @PRINTF_L32D_80FPFPF.@SCRATCH2
+025     @PRINTF_L32D_80FPFPF.@SCRATCH3
+026-029 @ADDFF.P1
+026     @PRINTF_L32D_80FPFPF.@SCRATCH4
+027     @PRINTF_L32D_80FPFPF.@SCRATCH5
+028     @PRINTF_L32D_80FPFPF.@SCRATCH6
+029     @PRINTF_L32D_80FPFPF.@SCRATCH7
+02A     @ADDFF.@SCRATCH1
+02A     @PRINTF_L32D_80FPFPF.@SCRATCH8
+02B     lcd_putc.c
+02B-02E @DIV3232.P1
+02B-02E @FTOSD.P2
+02B-02E @MULFF.P3
+02B     @ADDFF.@SCRATCH2
+02C     lcd_gotoxy.x
+02C     @delay_ms1.P1
+02C     @ADDFF.@SCRATCH3
+02D     lcd_gotoxy.y
+02D     @ADDFF.@SCRATCH4
+02E     lcd_gotoxy.address
+02E     @ADDFF.@SCRATCH5
+02F-032 @DIV3232.P1
+02F-032 @MULFF.P2
+02F     lcd_gotoxy.@SCRATCH1
+02F     @ADDFF.@SCRATCH6
+02F     @FTOSD.@SCRATCH1
+030     lcd_send_byte.address
+030     @ADDFF.@SCRATCH7
+031     lcd_send_byte.n
+031     @ADDFF.@SCRATCH8
+032     lcd_read_byte.ValeurLue
+032     lcd_send_byte.@SCRATCH1
+033     @MULFF.@SCRATCH1
+033     @DIV3232.@SCRATCH1
+034     @MULFF.@SCRATCH2
+034     @DIV3232.@SCRATCH2
+035     @MULFF.@SCRATCH3
+035     @DIV3232.@SCRATCH3
+036     @DIV3232.@SCRATCH4
+037     @DIV3232.@SCRATCH5
+F71     CCP_5
+F71     CCP_5_LOW
+F72     CCP_5_HIGH
+F74     CCP_4_LOW
+F74     CCP_4
+F75     CCP_4_HIGH
+F83     PSP_DATA
+F84     Lcd_Data
+F87.0   enable
+F87.1   rw
+F87.2   rs
+FB4.6   C1OUT
+FB4.7   C2OUT
+FB8     CCP_3
+FB8     CCP_3_LOW
+FB9     CCP_3_HIGH
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000026  @delay_ms1
+00004E  lcd_read_byte
+000070  lcd_send_byte
+0000A2  lcd_init
+00051E  lcd_gotoxy
+000542  lcd_putc
+000126  MesureTemp_Brute
+0000F0  @ITOF
+000174  MesurePotentiometreBrute
+0007BC  MAIN
+0001C2  @MULFF
+0002B4  @ADDFF
+000004  @const106
+000584  @FTOSD
+0005C4  @DIV3232
+00063E  @PRINTF_L32D_80FPFPF
+0007BC  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    C:\Documents and Settings\gokhan-duthil\Bureau\TP REG - AFF\PROG\
+
+Project Files:
+    code_temp.c
+    18F97J60.h
+    LCD_PicDemNet.C
+
+Units:
+    code_temp.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F97J60
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      code_temp.err
+    INHX32:      code_temp.hex
+    Symbols:     code_temp.sym
+    List:        code_temp.lst
+    Debug/COFF:  code_temp.cof
+    Project:     code_temp.PJT
+    Call Tree:   code_temp.tre
