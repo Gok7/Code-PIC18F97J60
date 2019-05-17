@@ -1,0 +1,93 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+006-007 MAIN.frequence
+008-009 @PRINTF_LU_84.P1
+008     MAIN.@SCRATCH1
+00A     @PRINTF_LU_84.@SCRATCH1
+00B     @PRINTF_LU_84.@SCRATCH2
+00C     @PRINTF_LU_84.@SCRATCH3
+00D     @PRINTF_LU_84.@SCRATCH4
+00E     @PRINTF_LU_84.@SCRATCH5
+00F     @PRINTF_LU_84.@SCRATCH6
+010     @PRINTF_LU_84.@SCRATCH7
+011     lcd_putc.c
+012     lcd_gotoxy.x
+012     @delay_ms1.P1
+013     lcd_gotoxy.y
+014     lcd_gotoxy.address
+015     lcd_gotoxy.@SCRATCH1
+016     lcd_send_byte.address
+017     lcd_send_byte.n
+018     lcd_read_byte.ValeurLue
+018     lcd_send_byte.@SCRATCH1
+F71     CCP_5_LOW
+F71     CCP_5
+F72     CCP_5_HIGH
+F74     CCP_4
+F74     CCP_4_LOW
+F75     CCP_4_HIGH
+F83     PSP_DATA
+F84     Lcd_Data
+F87.0   enable
+F87.1   rw
+F87.2   rs
+FB4.6   C1OUT
+FB4.7   C2OUT
+FB8     CCP_3_LOW
+FB8     CCP_3
+FB9     CCP_3_HIGH
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000004  @delay_ms1
+00002C  lcd_read_byte
+00004E  lcd_send_byte
+000080  lcd_gotoxy
+0000A4  lcd_putc
+00019A  MAIN
+0000E6  @PRINTF_LU_84
+00019A  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    C:\Documents and Settings\gokhan-duthil\Bureau\tp interruptions\prog\
+
+Project Files:
+    prog2.c
+    18F97J60.h
+    LCD_PicDemNet.C
+
+Units:
+    prog2.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F97J60
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      prog2.err
+    INHX32:      prog2.hex
+    Symbols:     prog2.sym
+    List:        prog2.lst
+    Debug/COFF:  prog2.cof
+    Project:     prog2.PJT
+    Call Tree:   prog2.tre

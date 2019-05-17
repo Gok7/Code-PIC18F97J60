@@ -1,0 +1,23 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=C:\Documents and Settings\gokhan-duthil\Bureau\TP interruptions\prog\prog3_bis_special_nicolas.o
+Folder=Intermediary
+[File001]
+Location=prog3_bis_special_nicolas.HEX
+Folder=Output
+[File002]
+Location=prog3_bis_special_nicolas.LST
+Folder=Output
+[File003]
+Location=prog3_bis_special_nicolas.PJT
+Folder=Output
+[File004]
+Location=prog3_bis_special_nicolas.ERR
+Folder=Output
+[File005]
+Location=prog3_bis_special_nicolas.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files\PICC\Ccsc.exe

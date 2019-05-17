@@ -1,0 +1,104 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     tour
+019-01A position
+01B     fonction.etat
+01C     @delay_ms1.P1
+01C     main.@SCRATCH1
+01D     @delay_us1.P1
+01E-021 @MULFF.P1
+01E-01F @ITOF.P2
+01E-021 @SFTOI.P3
+01E     fonction.@SCRATCH1
+01F     fonction.@SCRATCH2
+020     fonction.@SCRATCH3
+021     fonction.@SCRATCH4
+022-025 @ADDFF.P1
+022-025 @MULFF.P2
+026-029 @ADDFF.P1
+026     @MULFF.@SCRATCH1
+027     @MULFF.@SCRATCH2
+028     @MULFF.@SCRATCH3
+02A     @ADDFF.@SCRATCH1
+02B     @ADDFF.@SCRATCH2
+02C     @ADDFF.@SCRATCH3
+02D     @ADDFF.@SCRATCH4
+02E     @ADDFF.@SCRATCH5
+02F     @ADDFF.@SCRATCH6
+030     @ADDFF.@SCRATCH7
+031     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0522  @delay_ms1
+054A  @delay_us1
+056E  main
+0470  fonction
+009E  @ITOF
+00D6  @MULFF
+01CA  @ADDFF
+0436  @SFTOI
+056E  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    C:\Documents and Settings\gokhan-duthil\Bureau\TP interruptions\prog\
+
+Project Files:
+    prog3.c
+    ..\..\..\..\..\Program Files\PICC\Devices\18F452.h
+
+Units:
+    prog3.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F452
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      prog3.err
+    INHX32:      prog3.hex
+    Symbols:     prog3.sym
+    List:        prog3.lst
+    Debug/COFF:  prog3.cof
+    Project:     prog3.PJT
+    Call Tree:   prog3.tre

@@ -1,0 +1,5 @@
+>>> Warning 208 "programme1.c" Line 35(1,11): Function not void and does not return a value  fonctionIT
+>>> Warning 216 "programme1.c" Line 54(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_ms1)
+>>> Warning 202 "programme1.c" Line 11(5,11): Variable never used:   bouton
+      Memory usage:   ROM=0%      RAM=1% - 1%
+      0 Errors,  3 Warnings.

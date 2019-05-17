@@ -1,0 +1,225 @@
+CCS PCH C Compiler, Version 4.091, 48179               08-févr.-13 09:24
+
+               Filename: programme1.lst
+
+               ROM used: 382 bytes (0%)
+                         Largest free fragment is 65528
+               RAM used: 29 (1%) at main() level
+                         34 (1%) worst case
+               Stack:    3 worst case (1 in main + 2 for interrupts)
+
+*
+00000:  GOTO   0114
+*
+00008:  MOVWF  05
+0000A:  MOVFF  FD8,06
+0000E:  MOVFF  FE0,07
+00012:  MOVLB  0
+00014:  MOVFF  FE9,0D
+00018:  MOVFF  FEA,08
+0001C:  MOVFF  FE1,09
+00020:  MOVFF  FE2,0A
+00024:  MOVFF  FD9,0B
+00028:  MOVFF  FDA,0C
+0002C:  MOVFF  FF3,14
+00030:  MOVFF  FF4,15
+00034:  MOVFF  FFA,16
+00038:  MOVFF  FFB,17
+0003C:  MOVFF  00,0F
+00040:  MOVFF  01,10
+00044:  MOVFF  02,11
+00048:  MOVFF  03,12
+0004C:  MOVFF  04,13
+00050:  BTFSS  FF2.4
+00052:  GOTO   005C
+00056:  BTFSC  FF2.1
+00058:  GOTO   00CE
+0005C:  MOVFF  0F,00
+00060:  MOVFF  10,01
+00064:  MOVFF  11,02
+00068:  MOVFF  12,03
+0006C:  MOVFF  13,04
+00070:  MOVFF  0D,FE9
+00074:  MOVFF  08,FEA
+00078:  BSF    08.7
+0007A:  MOVFF  09,FE1
+0007E:  MOVFF  0A,FE2
+00082:  MOVFF  0B,FD9
+00086:  MOVFF  0C,FDA
+0008A:  MOVFF  14,FF3
+0008E:  MOVFF  15,FF4
+00092:  MOVFF  16,FFA
+00096:  MOVFF  17,FFB
+0009A:  MOVF   05,W
+0009C:  MOVFF  07,FE0
+000A0:  MOVFF  06,FD8
+000A4:  RETFIE 0
+.................... #include<18F97J60.h> 
+.................... //////// Standard Header file for the PIC18F97J60 device //////////////// 
+.................... #device PIC18F97J60 
+.................... #list 
+....................  
+.................... #DEVICE ADC=10 
+.................... #use delay(clock=25M) 
+000A6:  CLRF   FEA
+000A8:  MOVLW  21
+000AA:  MOVWF  FE9
+000AC:  MOVF   FEF,W
+000AE:  BZ    00CC
+000B0:  MOVLW  08
+000B2:  MOVWF  01
+000B4:  CLRF   00
+000B6:  DECFSZ 00,F
+000B8:  BRA    00B6
+000BA:  DECFSZ 01,F
+000BC:  BRA    00B4
+000BE:  MOVLW  19
+000C0:  MOVWF  00
+000C2:  DECFSZ 00,F
+000C4:  BRA    00C2
+000C6:  BRA    00C8
+000C8:  DECFSZ FEF,F
+000CA:  BRA    00B0
+000CC:  RETLW  00
+.................... #fuses HS,NOWDT 
+.................... #use RS232(BAUD=9600,XMIT=PIN_C6,RCV=PIN_C7,STOP=1) 
+....................  
+.................... //#include "LCD_PicDemNet.C" 
+....................  
+.................... void main(){ 
+*
+00114:  CLRF   FF8
+00116:  BCF    FD0.7
+00118:  BSF    08.7
+0011A:  CLRF   FEA
+0011C:  CLRF   FE9
+0011E:  BSF    F7E.3
+00120:  MOVLW  8A
+00122:  MOVWF  FAF
+00124:  MOVLW  02
+00126:  MOVWF  F7F
+00128:  MOVLW  A6
+0012A:  MOVWF  FAC
+0012C:  MOVLW  90
+0012E:  MOVWF  FAB
+00130:  MOVF   FC1,W
+00132:  ANDLW  C0
+00134:  MOVWF  FC1
+00136:  MOVLW  07
+00138:  MOVWF  FB4
+....................  
+.................... int bouton=1;     //si 0 alors appui,si 1 alors relaché 
+0013A:  MOVLW  01
+0013C:  MOVWF  1A
+.................... int etat=0b00000001; 
+0013E:  MOVWF  1B
+.................... SET_TRIS_B(0xFF);  //en entree 
+00140:  MOVLW  FF
+00142:  MOVWF  F93
+.................... SET_TRIS_J(0x00);  //en sortie 
+00144:  MOVLW  00
+00146:  MOVWF  F9A
+.................... //lcd_init(); 
+.................... ext_int_edge(L_TO_H); //front montant 
+00148:  BSF    FF1.6
+.................... enable_interrupts(INT_EXT); 
+0014A:  BSF    FF2.4
+.................... enable_interrupts(GLOBAL); 
+0014C:  MOVLW  C0
+0014E:  IORWF  FF2,F
+....................  
+.................... 	while(true){ 
+.................... 		while(etat!=0b00000000){ 
+00150:  MOVF   1B,F
+00152:  BZ    017A
+.................... 		 
+.................... 			delay_ms(500); 
+00154:  MOVLW  02
+00156:  MOVWF  1C
+00158:  CLRF   19
+0015A:  BTFSC  FF2.7
+0015C:  BSF    19.7
+0015E:  BCF    FF2.7
+00160:  MOVLW  FA
+00162:  MOVWF  21
+00164:  RCALL  00A6
+00166:  BTFSC  19.7
+00168:  BSF    FF2.7
+0016A:  DECFSZ 1C,F
+0016C:  BRA    0158
+.................... 			output_J(etat); 
+0016E:  CLRF   F9A
+00170:  MOVFF  1B,F91
+.................... 			etat=etat<<1; 
+00174:  BCF    FD8.0
+00176:  RLCF   1B,F
+.................... 		 
+.................... 		       } 
+00178:  BRA    0150
+....................  
+.................... 		etat=0b00000001; 
+0017A:  MOVLW  01
+0017C:  MOVWF  1B
+....................  
+.................... 	}	 
+0017E:  BRA    0150
+.................... } 
+....................  
+.................... #INT_EXT//gere l'entree RBO 
+.................... fonctionIT(){ 
+00180:  SLEEP 
+.................... 	 
+.................... 	int i; 
+.................... 	int sav_led; 
+.................... 	sav_led=input_j();//sauvegarde etat led 
+*
+000CE:  MOVLW  FF
+000D0:  MOVWF  F9A
+000D2:  MOVFF  F88,1F
+.................... 		for(i=0;i<3;i++){ 
+000D6:  CLRF   1E
+000D8:  MOVF   1E,W
+000DA:  SUBLW  02
+000DC:  BNC   0108
+.................... 	 
+.................... 			output_J(0xff); 
+000DE:  CLRF   F9A
+000E0:  MOVLW  FF
+000E2:  MOVWF  F91
+.................... 			delay_ms(500); 
+000E4:  MOVLW  02
+000E6:  MOVWF  20
+000E8:  MOVLW  FA
+000EA:  MOVWF  21
+000EC:  RCALL  00A6
+000EE:  DECFSZ 20,F
+000F0:  BRA    00E8
+.................... 			output_J(0x00); 
+000F2:  CLRF   F9A
+000F4:  CLRF   F91
+.................... 			delay_ms(500); 
+000F6:  MOVLW  02
+000F8:  MOVWF  20
+000FA:  MOVLW  FA
+000FC:  MOVWF  21
+000FE:  RCALL  00A6
+00100:  DECFSZ 20,F
+00102:  BRA    00FA
+.................... 		} 
+00104:  INCF   1E,F
+00106:  BRA    00D8
+.................... 	output_J(sav_led); 
+00108:  CLRF   F9A
+0010A:  MOVFF  1F,F91
+.................... } 
+....................  
+.................... 	 
+....................  
+.................... 	 
+0010E:  BCF    FF2.1
+00110:  GOTO   005C
+
+Configuration Fuses:
+   Word  1: F480   NODEBUG NOXINST NOSTVREN NOWDT NOPROTECT
+   Word  2: FFC4   HS WDT32768 FCMEN IESO PRIMARY
+   Word  3: F7F8   CCP2C1 ECCPE ETHLED WAIT BW16 MCU EASHFT

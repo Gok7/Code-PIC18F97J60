@@ -1,0 +1,128 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019-01C compteur
+01D-020 MAIN.frequence
+021     MAIN.@SCRATCH1
+022     MAIN.@SCRATCH2
+023     MAIN.@SCRATCH3
+024     MAIN.@SCRATCH4
+025-028 @PRINTF_L32U_84.P1
+029     @PRINTF_L32U_84.@SCRATCH1
+02A     @PRINTF_L32U_84.@SCRATCH2
+02B     @PRINTF_L32U_84.@SCRATCH3
+02C     @PRINTF_L32U_84.@SCRATCH4
+02D     @PRINTF_L32U_84.@SCRATCH5
+02E     @PRINTF_L32U_84.@SCRATCH6
+02F     @PRINTF_L32U_84.@SCRATCH7
+030     @PRINTF_L32U_84.@SCRATCH8
+031-034 @DIV3232.P1
+031     lcd_putc.c
+032     @delay_ms1.P1
+032     lcd_gotoxy.x
+033     lcd_gotoxy.y
+034     lcd_gotoxy.address
+035-038 @DIV3232.P1
+035     lcd_gotoxy.@SCRATCH1
+036     lcd_send_byte.address
+037     lcd_send_byte.n
+038     lcd_read_byte.ValeurLue
+038     lcd_send_byte.@SCRATCH1
+039     @DIV3232.@SCRATCH1
+03A     @DIV3232.@SCRATCH2
+03B     @DIV3232.@SCRATCH3
+03C     @DIV3232.@SCRATCH4
+03D     @DIV3232.@SCRATCH5
+F71     CCP_5
+F71     CCP_5_LOW
+F72     CCP_5_HIGH
+F74     CCP_4_LOW
+F74     CCP_4
+F75     CCP_4_HIGH
+F83     PSP_DATA
+F84     Lcd_Data
+F87.0   enable
+F87.1   rw
+F87.2   rs
+FB4.6   C1OUT
+FB4.7   C2OUT
+FB8     CCP_3_LOW
+FB8     CCP_3
+FB9     CCP_3_HIGH
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000BC  @delay_ms1
+0000E4  lcd_read_byte
+000106  lcd_send_byte
+000138  lcd_init
+000186  lcd_gotoxy
+0001AA  lcd_putc
+000312  MAIN
+0001EC  @DIV3232
+000266  @PRINTF_L32U_84
+0000A6  fonction
+000312  @cinit
+
+
+User Memory space: 
+
+Project Directory:
+    C:\Documents and Settings\gokhan-duthil\Bureau\tp interruptions\prog\
+
+Project Files:
+    programme2bis.c
+    18F97J60.h
+    LCD_PicDemNet.C
+
+Units:
+    programme2bis.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F97J60
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      programme2bis.err
+    INHX32:      programme2bis.hex
+    Symbols:     programme2bis.sym
+    List:        programme2bis.lst
+    Debug/COFF:  programme2bis.cof
+    Project:     programme2bis.PJT
+    Call Tree:   programme2bis.tre
